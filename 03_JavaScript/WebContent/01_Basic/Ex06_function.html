@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex06_function.html</title>
+<style type="text/css">
+	body{
+		background-image: url('./../images/bg9.jpg')
+	}
+
+</style>
+
+<script type="text/javascript">
+	function bg(my){
+		//alert('bg');
+		
+		var reply = confirm("배경 이미지를 바꾸시겠습니까?");
+		document.write(reply);
+		
+		if(reply == true){
+			
+			document.body.style.backgroundImage = "url(" + my +")"; // url(./../images/bg10.gif) 
+			
+		}
+	}
+</script>
+</head>
+<body onload="alert('저의 홈피에 오신것을 환영합니다.')">
+	<form>
+		<input type="button" value="배경 이미지 바꾸기 1" onClick="bg('./../images/bg10.gif')">      
+		<input type="button" value="배경 이미지 바꾸기 2" onClick="bg('./../images/bg11.gif')">
+	</form>
+</body>
+</html>
+
+
+
+
+

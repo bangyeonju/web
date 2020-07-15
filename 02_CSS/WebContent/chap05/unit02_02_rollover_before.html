@@ -13,25 +13,45 @@
 				margin:0px auto;
 				}
 			h1 {
-				text-shadow:0px 0px 5px #666;
+				text-shadow:10px 10px 5px #666;
 				text-align:center;
 				font-size:3em;
 				letter-spacing:5px;
 				color:#d81b21;
+				/* 대문자로 바꿔줌!  */
 				text-transform:uppercase;
+				
 				}
 			a {
 				text-decoration:none;
 				}
 			img {
 				border:none;
+				width: 100px;
+				height: 100px;
 				}
 			ul, li {
 				margin:0px;
 				padding:0px;
 				}
 			/* Rollover Design */
+			#gallery {	
+			list-style: none;
+			}
+			#gallery li{
+				float:left;
+				margin-left:15px;
+				
+			}
+			img:hover{
+			width: 300px;
+			height: 300px;
+			position: relative;
+			box-shadow: 0px 0px 15px #000;
+			transition-property:width height;
+			transition-duration:2s; /* 2초동안 서서히  */
 			
+			}
 		</style>
 	</head>
 
@@ -41,9 +61,9 @@
 		</header>
 		<nav>
 				<ul id="gallery">
-					<li><a href=""><img src="images/bag_hotpink.png" alt="hotPink" /></a></li> 
-					<li><a href=""><img src="images/bag_navy.png" alt="Navy" /></a></li>  
-					<li><a href=""><img src="images/bag_white.png" alt="white" /></a></li> 
+					<li><a href=""><img src="../images/1.png" alt="hotPink" /></a></li> 
+					<li><a href=""><img src="../images/2.png" alt="Navy" /></a></li>  
+					<li><a href=""><img src="../images/3.png" alt="white" /></a></li> 
 				</ul>
 		</nav>
 	</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex07_click_blur.html</title>
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background-color:yellow;
+	}
+</style>
+<script type="text/javascript">
+function func(name){
+	alert(name);
+	
+}
+function func2(name){
+	//alert(name);
+	var myarea = document.getElementById("result");
+	myarea.innerHTML = name;
+	
+}
+</script>
+</head>
+<body>
+	<form>
+		이름 : <input type="text" name="id" value="태연" onClick="func('소녀시대')" 
+		onBlur="func2(this.value)">
+		<div id="result" ></div> 
+	</form>
+</body>
+</html>

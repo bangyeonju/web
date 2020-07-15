@@ -4,7 +4,19 @@
 		<title>요소의 배경 처리하기</title>
 		<meta charset="UTF-8" />
 		<style type="text/css">
-				
+		body{
+			background-color: silver;
+			background-image: url("../images/3.png");
+			background-repeat:repeat-y;
+			background-position: top right; /* 이미지 시작점을 바꿀때 */
+			background-attachment: fixed; /* 이미지고정 */
+			}
+			
+		div{
+			background: url(../images/bg1.png) repeat-y fixed;
+				}
+				p{background: url("../images/arrow.gif") repeat-x bottom left;
+				}
 		</style>
 	</head>
 

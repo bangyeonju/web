@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex05_function.html</title>
+<script type="text/javascript">
+	var age = 30;
+	document.write("나이1:"+age+"<br>");
+	
+	/* 함수 정의  */
+	function test(){
+		document.write("test()<br>");
+		age=40;
+		document.write("나이2:"+age+"<br>");
+		
+	}
+	/* 함수 정의  */
+	function test2(age){
+		document.write("test()<br>");
+		age=44;
+		document.write("나이4:"+age+"<br>");
+		
+	}
+	
+	/* 함수 호출 */
+	test();
+	document.write("나이3:"+age+"<br>");
+	
+	
+	test2(50);
+	document.write("나이4:"+age+"<br>");
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

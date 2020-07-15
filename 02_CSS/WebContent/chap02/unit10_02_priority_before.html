@@ -2,9 +2,27 @@
 <html>
 	<head>
 		<title>선택자간의 우선 순위 알아보기</title>
+	<!--
+	우선순위 
+	!important > 인라인스타일>id > class,속성,가상> 태그 >전체선택자
+	--> 
 		<meta charset="UTF-8" />
 		<style type="text/css">
-		
+		#bgPage1{
+			color:skyblue;
+		}
+		.bgPage2{
+			color:pink;
+		}
+		.blueText{
+			color:white;	
+			background-color:green;
+		}
+		/* 적용안됨  !important이용해서 적용되게함*/
+		span{
+		color:red;
+		background-color:purple !important;
+		}
 		</style>
 	</head>
 
@@ -19,3 +37,17 @@
 		</div>
 	</body>
 </html>
+<!-- 
+선택자
+태그선택자:h1 p
+자식선택자:>
+자손선택자:공백
+아이디 선택자 : #
+클래스 선택자 : .
+속성선택자 : a[title]
+전체선택자 : *
+형제선택자 : +
+가상선택자 :  :hover, :focus, :first-child, :nth-child(3)
+그룹선택자 : ,
+ -->
+			
