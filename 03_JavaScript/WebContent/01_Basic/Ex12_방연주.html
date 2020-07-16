@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Ex12_내이름.html</title>
 <style type="text/css">
 	body{
@@ -31,6 +32,41 @@
 		document.write("<tr>");
 		for(var dan=2; dan<=9; dan++){
 			document.write("<td>"+dan +"X"+su +"="+ dan*su + "</td>");
+=======
+<title>Ex12_방연주.html</title>
+<style type="text/css">
+#table2{
+background-color : pink;
+border:1px solid  black;
+}
+#table1{
+border:1px solid black;
+border-collapse: collapse;
+text-align: center;
+}
+#table3{
+border:1px solid black;
+}
+
+
+</style>
+<script type="text/javascript">
+	document.write("<table id=table1> ");
+
+
+	document.write("<tr>");
+	for(i=2;i<=9;i++){
+			document.write("<th id=table2>"+i+"단"+"</th>");
+			}
+	document.write("</tr>"); 
+	
+	for(i=1;i<=9;i++){
+		document.write("<tr>");
+		for (j=2;j<=9;j++)
+		{	
+			
+			document.write("<td id=table3>" +j+"*"+i+"="+ j*i + "</td>");
+>>>>>>> 7d326db5e57672bcb3bbf9eafad90ac72847c2c2
 		}
 		document.write("</tr>");
 	}
