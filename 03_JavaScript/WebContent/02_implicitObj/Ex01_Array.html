@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01_Array.html</title>
+<script type="text/javascript">
+/* 방의개수를 신경쓰지 않아도 된드아아 */
+	var a = new Array(4);
+	document.write("a의 길이 :" + a.length+"<br>");
+
+	for(var i=0;i<a.length;i++){
+		document.write(a[i]+ " ");
+	}
+	document.write("<br>");
+	a[0]="spring";
+	a[1]="summer";
+	a[2]='fall';
+	a[5]="winter";
+	document.write("a의 길이 :" + a.length+"<br>");
+	for(var i=0;i<a.length;i++){
+		document.write(a[i]+ " ");
+	}
+	
+	document.write(a+"<br>");
+	document.write(a.toString()+"<br>");
+	document.write("<br>")
+	document.write("----------------------------------------------");
+	var b = ['rose','tulip','lily',123];
+	document.write(b+"<br>")
+	for(var i=0;i<b.length;i++){/* b.length b의방의개수 */
+		document.write(b[i]+"/");
+	}
+	document.write("<br>")
+	for(v in b){//v에는 방번호가 들어간다.
+		document.write(v+":"+b[v] +"/" +b[v].length +"<br>"); /*b[v].length 문자열의 개수*/
+		
+	}
+	document.write("<br>")
+	document.write("----------------------------------------------");
+	
+	document.write("<br>")
+	var c = new Array('kim','lee');
+	var d = new Array('park','choi','won');
+	cd = c.concat(d);
+	document.write("cd:" +cd);
+	document.write("<br>")
+	dc=d.concat(c);
+	document.write("dc:" +dc +"<br>");
+	document.write(dc.reverse()+"<br>");
+	document.write("slice:"+cd.slice(1,5)+"<br>");
+	document.write("sort:"+cd.sort()+"<br>") //오름차순으로 
+	document.write("sort:"+cd.sort().reverse()+"<br>") //내림차순으로 
+	
+	
+	/* int[] a = {1,2,3};
+	int[] b = new int[]{1,2,3};
+	int[] c = new int[3];
+	c[0]=1;
+	c[1]=2;
+	c[2]=3;
+	for(int i=0;i<a.length;i++){
+		syso
+	}
+	
+	for(int x : a){
+		
+	} */
+	</script>
+</head>
+<body>
+
+</body>
+</html>

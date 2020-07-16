@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		background:skyblue;
+		width:200px;
+		height:100px;
+	}
+</style>
+<script type="text/javascript">
+	var f_selarr = new Array('한식', '중식', '일식', '외국식');
+
+	var s_selarr = new Array();
+	s_selarr[0] = new Array('김치찌개', '된장찌개', '불고기', '족발', '삼겹살');
+	s_selarr[1] = new Array('마라탕', '짜장면', '탕수육', '짬뽕');
+	s_selarr[2] = new Array('나베', '초밥', '오꼬노미야끼');
+	s_selarr[3] = new Array('스테이크', '파스타', '쌀국수', '피자', '카레');
+	function init() {
+		//alert(1);
+		f_sel = document.myform.first;
+		f_sel.options[0] = new Option("선택");
+
+		for (var i = 0; i < f_selarr.length; i++) {
+			f_sel.options[i + 1] = new Option(f_selarr[i]);
+
+		}
+
+	}
+	function firstChange(){
+	//alert(document.myform.first.selectedIndex)//선택한 인덱스번호
+	
+		f_sel=document.myform.first;
+		f_selIndex=f_sel.selectedIndex;
+		//alert(f_sel.selectedIndex);
+		s_sel = document.myform.second;
+		
+		for(var i=s_sel.length-1;i>=0;i--){
+			s_sel.options[i]=null;
+		}
+		
+		s_sel.options[0] = new Option("선택");
+		for(var i=0;i<s_selarr[f_selIndex-1].length;i++){
+			s_sel.options[i+1] = 
+					new Option(s_selarr[f_selIndex-1][i]);
+		}	
+	}
+	function secondChange(){
+		f_selIndex = document.myform.first.selectedIndex;
+		s_selIndex = document.myform.second.selectedIndex;
+		
+		f_value = document.myform.first[f_selIndex].value;
+		s_text=document.myform.second[s_selIndex].text;
+		
+		
+		var area = document.getElementById("result");
+		area.innerHTML="선택한 메뉴는 <br>"+f_value +","+s_text+"입니다.";
+	}
+	
+</script>
+</head>
+<body onLoad="init()">
+	<form name="myform">
+		<select id="first" onChange="firstChange()"></select> 
+		<select id="second" style="width:70px" onChange="secondChange()"></select>
+	</form>
+	<div id="result"></div>
+</body>
+</html>
+
+
+
+
+
+
+
