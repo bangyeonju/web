@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check(){ //유효성 검사
+	
+	
+	str="선택한 항목은 \n";
+	if(document.myform.id.value==""){
+		alert("id 입력 누락");
+		return false; //action으로 넘어가지 못하게!
+	}
+	str+=myform.id.value+"\n";
+	
+//	if(document.myform.pw.value==""){
+	if(document.myform.pw.value.length==0){
+		alert("비밀번호 입력 누락");
+		return false;
+	}
+	if(myform.pw.value.length<4||myform.pw.value.length>8){
+		alert("비번은 4이상 8자 이하로 입력하세용");
+		return false;
+		
+	}
+	str+=document.myform.pw.value+"\n";
+    telvalue = document.myform.tel.value; // 010-1234-dq23
+    if( isNaN(telvalue) || telvalue == ""){
+       alert('연락처는 숫자만 입력가능합니다.');
+       document.myform.tel.value = "";  
+       return false;         
+    }
+	str+=myform.tel.value+"\n";
+    len = myform.song.length;
+    //alert("len:" + len);
+    
+    flag = false;
+    for(var i=0;i<len;i++){
+       if(myform.song[i].checked == true){
+    	   str+=myform.song[i].value+"\n";
+    	   flag = true;
+       }
+         
+       }
+  
+    
+    if(flag == false){
+       alert("song 하나는 선택해야 합니다.");
+       return false;
+	}
+    
+    flag= false;
+	for(var i=0;i<myform.hobby.length;i++){
+		if(myform.hobby[i].checked == true){
+			str += myform.hobby[i].value +"/";
+			flag = true;
+		}
+	}
+	if(flag==false){
+		alert("취미는 최소 하나 선택해여합니다.");
+		return false;
+		}
+	alert(str);
+    
+}//check
+function clearText(address){
+    //alert(1);
+    if(address.defaultValue == address.value){
+       address.value = "";
+    }
+    
+ }// clearText
+	// alert(1);
+
+
+</script>
+</head>
+<body>
+	<form name="myform" action="abc.jsp">
+	아이디:<input type="text" name="id" placeholder="아이디를 입력하세용"> <br>
+	비밀번호:<input type="password" name="pw">(4자리~8자로 입력하세용)<br>
+	주소:<input type="text" name="addr" value="주소를 입력하세용" onFocus="clearText(this)"><br>
+	연락처:<input type="text" name="tel">(-는뺴고 숫자만 입력하세요)<br>
+	좋아하는 노래를 선택하세요<br>
+	<input type="radio" name="song" value="세월이 가면">세월이 가면
+	<input type="radio" name="song" value="붉은 노을" >붉은 노을<!-- 선택된채로  시작하고 싶다면  checked-->
+	<input type="radio" name="song"	value="희망사항">희망사항
+	<input type="radio" name="song"	value="마시멜로">마시멜로
+	<br>
+	좋아하는 취미를 선택하세요<br>
+	<input type="checkbox" name="hobby" value="자바공부">자바공부
+	<input type="checkbox" name="hobby" value="oracle공부" >oracle공부<!-- 선택된채로  시작하고 싶다면  checked-->
+	<input type="checkbox" name="hobby" value="html공부">html공부
+	<input type="checkbox" name="hobby" value="자바스크립트공부">자바스크립트공부
+	<br>
+	
+
+	
+	<input type="submit" value="등록" onClick="return check()"><!-- submit클릭시 action / onClick="check()" abc로 가기전에 값들이 누락되었나 안되었나 체크한다.-->
+	<input type="reset" value="취소">
+	</form>
+</body>
+</html>

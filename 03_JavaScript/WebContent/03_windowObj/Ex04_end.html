@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function meClose(){
+	var num1 = Number(document.myform.num1.value);
+	var num2 = Number(document.myform.num2.value);
+	
+	//alert(num1+num2);
+	//self.close();
+	var oper = Number(document.myform.operator.value);
+	var result;
+	switch(oper){
+		case 1:
+			result=num1+num2;
+			break;
+		case 2:
+			result=num1-num2;
+			break;
+		case 3:
+			result=num1*num2;
+			break;
+		case 4:
+			result=num1/num2;
+			break;
+			
+	}
+	opener.myform.result.value= result;
+	self.close();
+}
+</script>
+</head>
+<body>
+	<form name="myform">
+	<input type="text" name="num1">
+	
+	<select id="operator">
+		<option value="1">더하기</option>
+		<option value="2">빼기</option>
+		<option value="3">곱하기</option>
+		<option value="4">나누기</option>
+	</select>
+	<input type="text" name="num2" />
+	<input type="button" value="닫기" onClick="meClose()"/>
+	</form>
+</body>
+</html>

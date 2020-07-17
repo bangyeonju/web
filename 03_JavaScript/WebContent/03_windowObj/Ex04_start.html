@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function openWin(url){
+		var options = 'width=600, height=400, left=100, top=50';
+	 	window.open(url,'pop',options);
+	}
+</script>
+</head>
+<body>
+	<h3>열기 버튼을 클릭하세요</h3>
+	<form name="myform">
+		결과 : <input type="text" name="result"/><br><br>
+		<input type="button" value="열기" onClick="openWin('Ex04_end.html')" />
+	</form>
+</body>
+</html>

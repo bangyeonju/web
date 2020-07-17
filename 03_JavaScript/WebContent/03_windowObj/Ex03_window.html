@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function openWin(url){
+	
+	var options = 'width=600, height=400, left=100, top=50';
+ 	window.open(url,'',options);
+	
+}
+</script>
+</head>
+<body>
+	<form name="myform">
+		id : <input type="text" name="id" /><br> <!-- 입력한값 :value -->
+		pw : <input type="text"name="pw" /><br>
+		<input type="button" value="팝업창열기" onClick="openWin('Ex03_popup.html')" />
+	</form>
+</body>
+</html>

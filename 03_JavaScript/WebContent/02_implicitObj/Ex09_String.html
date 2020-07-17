@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"></style>
+<script type="text/javascript">
+
+	var str = "태양처럼 뜨거운, 바람처럼 자유로운 영혼";
+	document.write(str+"<br>");
+	document.write(str.toString()+"<br>");
+	document.write(str.charAt(5)+"<br>"); //인데스 번호가 0에서 부터 시작한다.
+	document.write(str.indexOf('처럼')+"<br>"); //처음 만나는 '처럼'위치를 알려준다.
+	document.write(str.indexOf('가나다')+"<br>"); //없으면 -1
+	document.write(str.indexOf('처럼',5)+"<br>"); //5이후에 나오는 '처럼'의 위치
+	
+	document.write(str.substring(10,15)+"<br>");//15앞까지만 나온다. 15는 안나온다
+	document.write(str.substring(10)+"<br>");//10~끝까지
+	
+	document.write(str.slice(10,14)+"<br>");//15앞까지만 나온다. 15는 안나온다
+	document.write(str.slice(10)+"<br>");//10~끝까지
+	document.write(str.slice(10,-4)+"<br>");//음수도가능
+
+	document.write(str.substr(10,4)+"<br>");// substr(시작위치,갯수)
+	document.write(str.replace('럼','가')+"<br>");
+	
+	word=" I Can Do It!";
+	document.write(word.toUpperCase()+"<br>");
+	document.write(word.toLowerCase()+"<br>");
+	
+	document.write(word.length);//괄호뺴고!
+	
+	
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

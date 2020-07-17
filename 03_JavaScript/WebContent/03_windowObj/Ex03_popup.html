@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 300px;
+	height: 200px;
+}
+</style>
+<script type="text/javascript">
+function receiver(){
+	alert(1);
+	/* window창에 입력한 id,pw value 값을  갖져와 popup창에 출력하라 */
+	document.myform.child_id.value= window.opener.document.myform.id.value;
+	document.myform.child_pw.value=window.opener.document.myform.pw.value;
+	
+	/* opener객체 : 현재 창을 열리게 한 부모창을 지칭하는 객체 */
+}
+function meClose(){
+	
+	opener.myform.id.value=document.myform.child_id.value;
+	opener.myform.pw.value=document.myform.child_pw.value;
+	self.close();
+}
+</script>
+</head>
+<body onLoad="receiver()">
+	<img src="../images/pop1.jpg" />
+	<br>
+	<form name="myform">
+		id : <input type="text" name="child_id" /><br> 
+		pw : <input type="text"name="child_pw" /><br>
+		<input type="button" value="닫기" onClick="meClose()" />
+	</form>
+</body>
+</html>
