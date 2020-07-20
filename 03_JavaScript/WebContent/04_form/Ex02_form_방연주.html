@@ -15,33 +15,73 @@ table {
 }
 </style>
 <script type="text/javascript">
+	duplicate=false;
+
+	function idCheck(){
+		
+//	alert(2);
+	duplicate=true;
+	if(document.myform.id.value=="abcd"){
+		alert("중복되는 아이디 입니다.")
+		document.myform.id.value="";
+		document.myform.id.focus();
+	}else{
+		alert("사용 가능한 아이디입니다.");
+		
+	}
+	}
+
 	function check() {
+		str="선택한 항목은 \n";
+		if(duplicate==false){
+			alert("아이디 중복체크는 필수입니다.");
+			return false;
+		}
 		if (document.myform.id.value == "") {
 			alert("id값누락");
+			document.myform.id.focus(); //포커스위치
 			return false;
 		}
+		str=document.myform.id.value+"\n";
+		
 		if (document.myform.password.value.length == 0) {
 			alert("pw값 누락");
+			document.myform.password.focus();
 			return false;
 		}
+		
 		if (document.myform.repassword.value.length == 0) {
 			alert("비밀번호확인값 누락");
+			document.myform.repassword.focus();
 			return false;
 		}
+
 		if (document.myform.password.value.length<2||document.myform.password.value.length>10) {
 			alert("pw값은 2보다 크고 10보다 작아야한다.");
 			return false;
 		}
-		document.write(myform.password.value);
-		document.write(document.myform.repassword.value);
-		/* 	if(document.myform.password.value != document.myform.repassword.value){
-				alert("비밀번호가 같지않습니다.");
-				return false;
-			}  */
 	
-		phone1value = myform.phone1.value;
-		phone2value = myform.phone2.value;
-		if (isNaN(phone1value) || isNaN(phone2value)) {
+		if(document.myform.password.value != document.myform.repassword.value){
+				alert("비밀번호 재확인ㅇ르 해주세용");
+				return false;
+			}   
+		str+=document.myform.password.value+"\n";
+		if(document.myform.name.value==""){
+			
+			alert("이름을 입력해주세용");
+			document.myform.name.focus();	
+			return false;
+		}
+		str+=document.myform.name.value+"\n";
+		
+		index= document.myform.areacode.selectedIndex;
+		if(index==0){
+			alert("지역번호 선택해주세용");
+			return false;
+		}
+		phone1value = document.myform.phone1.value;
+		phone2value = document.myform.phone2.value;
+		if (isNaN(phone1value) ==true|| isNaN(phone2value)) { //매개변수가 숫자가 아니면 true, 숫자이면 false를 반환합니다.
 			alert("전화번호 숫자만 입력");
 			return false;
 		}
@@ -50,39 +90,30 @@ table {
 			return false;
 		}
 
-		len = myform.gender.length;
-		flag = false;
-		for(var i=0;i<len;i++){
-			if(myform.gender[i].checked==true){
-				flag = true;
-			}
-		}
-		if(flag==false){
-			alert("성별을 선택해주세요");
-			return false;
-		}
-		
-		if(document.myform.name.value==""){
-			alert("이름을 입력해주세용");
-			return false;
-		}
+		str+=document.myform.areacode[index].value+"-";
+		str+=phone1value+"-";
+		str+=phone2value+"\n";
 		if(document.myform.address1.value==""){
 			alert("주소를 입력해주세요");
+	
 			return false;
 		}
 		if(document.myform.address2.value==""){
 			alert("상세주소를 입력해주세요");
 			return false;
 		}
-		if(document.myform.email.value==""){
-			alert("이메일을 입력해주세요");
+		 if(document.myform.email.value.indexOf('@') ==-1){ //@인덱스 번호 찾는데 없으면 -1이 나온다
+			alert("유효한 메일주소가 아닙니다.ㅇ");
 			return false;
 			
-		}
+		} 
+		 str += document.myform.email.value+"\n";
+		 
 		singerlen=document.myform.singer.length;
 		flag=false;
 		for(var i =0;i<singerlen;i++){
 			if(myform.singer[i].checked==true){
+				str+=document.myform.singer[i].value+" ";
 				flag=true;
 			}
 			
@@ -92,6 +123,25 @@ table {
 			return false;
 		}
 		
+		genderlen = document.myform.gender.length;
+		flag = false;
+		for(var i=0;i<genderlen;i++){
+			if(myform.gender[i].checked==true){
+				str+=document.myform.gender[i].value+" ";
+				flag = true;
+			}
+		}
+		if(flag==false){
+			alert("성별을 선택해주세요");
+			return false;
+		}
+		if(document.myform.ta.value==""){
+			alert("글을써주세용");
+			return false;
+			
+			
+		}
+		alert(str);
 
 	}//check
 
@@ -99,6 +149,7 @@ table {
 		//alert(1);
 		if (myform.id.value == myform.id.defaultValue) {
 			myform.id.value = "";
+			
 
 		}
 	}
@@ -130,7 +181,8 @@ table {
 			<tr>
 				<td>전화 번호</td>
 				<td><select name="areacode">
-						<option value="02" selected="selected">02</option>
+						<option value="선택">선택</option>
+						<option value="02">02</option>
 						<option value="031">031</option>
 						<option value="051">051</option>
 						<option value="043">043</option>
@@ -150,14 +202,14 @@ table {
 			</tr>
 			<tr>
 				<td>email</td>
-				<td><input type="text" name="email" size="30" maxlength="30"></td>
+				<td><input type="text" name="email" size="30" maxlength="30"></td> <!-- 타입이 이메일이면 자동으로 유효성검사가 된다. -->
 			</tr>
 			<tr>
 				<td>사진 올리기</td>
 				<td><input type="file"></td>
 			</tr>
 			<tr>
-				<td>좋아하는 가수</td>
+				<td>좋아하는 가수</td><!-- checkbox여러개 선택가능 -->
 				<td><input type="checkbox" name="singer" value="소녀시대"
 					checked="checked">소녀시대 <input type="checkbox" name="singer"
 					value="방탄">방탄 <input type="checkbox" name="singer"
@@ -165,13 +217,13 @@ table {
 					value="동방신기">동방신기</td>
 			</tr>
 			<tr>
-				<td>성별</td>
+				<td>성별</td><!--radio 한가지만 선택  -->
 				<td><input type="radio" name="gender" value="남">남 <input
 					type="radio" name="gender" value="여">여</td>
 			</tr>
 			<tr>
 				<td>글 쓰기</td>
-				<td><textarea rows="5" cols="30" name="ta"></textarea></td>
+				<td><textarea rows="5" cols="30" name="ta">여기는 textarea자리입니당~</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit"

@@ -61,7 +61,17 @@ function check(){ //유효성 검사
 		alert("취미는 최소 하나 선택해여합니다.");
 		return false;
 		}
+	
+	index = document.myform.food.selectedIndex;
+	if(index==0){
+		alert("메뉴선택하세요!");
+		return false;
+	}
+	str+= myform.food[index].value;
+	
 	alert(str);
+	
+	
     
 }//check
 function clearText(address){
@@ -94,6 +104,17 @@ function clearText(address){
 	<input type="checkbox" name="hobby" value="html공부">html공부
 	<input type="checkbox" name="hobby" value="자바스크립트공부">자바스크립트공부
 	<br>
+	
+	좋아하는 음식을 선택하세요<br>
+	<select id="favo" name="food">
+		<option value="선택">선택</option>
+		<option value="족발">족발</option>
+		<option value="엽떡">엽떡</option>
+		<option value="쫄면">쫄면</option>
+		<option value="치킨">치킨</option>
+			
+	</select>
+	<br><br>
 	
 
 	

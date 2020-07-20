@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex01_location.html</title>
+<script type="text/javascript">
+	var now = new Date();
+	
+	document.write("현재시간은 "+ now.toLocaleString() +"입니다.");
+	document.write("네이트".link("https://www.nate.com"));
+			
+
+	function goNaver() {
+		//alert(1);
+		window.location.href = "https://www.naver.com/"; 
+		//location 페이지를 이동하고 싶을 떄 사용한다.
+		
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="네이버" onClick="goNaver()">
+		<input type="button" value="다음" onClick="window.location.href = 'https://www.daum.net/'">
+		<br>
+		<!-- location.reload() 새로고침 -->
+		<input type="button" value="지금시간은?" onClick="location.reload()"> 
+		
+		 
+	</form>
+</body>
+</html>
