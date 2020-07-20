@@ -7,33 +7,47 @@
 //정규표현식
 function check(){
 	var msg = document.forms[0].zipcode.value;
-	alert(msg);
+	//alert(msg);
 /*  /^d{3}-?\d{3}$/ */ //우편번호
 		
 		
 	//345-123,333-222,ab124-123qw=>이것도 된다고 생각한다. 숫자세자리-숫자세자리
-	var regex =/\d{3}-\d{3}/;
+//	var regex =/\d{3}-\d{3}/;
 	
 	//^:꼭숫자로 시작해라  $:숫자로 마무리해라
-	var regex2 =/^\d{3}-\d{3}$/;
+//	var regex2 =/^\d{3}-\d{3}$/;
 	
 	//? : 앞에있는 글자가 0개 또는 1개만 가능  => -가 한개또는 0개 가능
 	// * : 0개 or 무한대
 	
-	var regex3 =/^\d{3}-\d{3}$/; 
+/* 	var regex =/^\d{3}-\d{3}$/; 
 	if(msg.search(regex3)==-1){
 		alert("잘못된 형식");
 	 } else{
 		 alert("올바른 형식");
-	 }
+	 } */
+	
+	//핸드포번호
+	//var regex=  /^\(?\d{2,3}\)?[ -.]\d{3,4}[ -.]\d{4}$/;
+	
+	//주민번호
+	//var regex =   /^\d{6}-[1-4]\d{6}$/; 
+	
+	//아이디
+	//var regex=/^[a-zA-Z0-9{4,8}$]/;
+	
+	//이메일체크
+	// /^[a-zA-Z0-9_]$/;
+	var regex=/^\w{3,5}@[a-z]{2,5}\.[a-z]{2,5}$/; // 이메일체크
 	
 	
-	var regex=/^(?\d{2,3}\)?[ -.]\d{3,4}[ -.]\d{4}$/;
-	if(msg.search(regex)==-1){
+	if(msg.search(regex) == -1){
 		alert("잘못된 형식");
-	 } else{
-		 alert("올바른 형식");
-	 }
+	} else{
+		alert("올바른 형식");
+	}
+	
+	
 	
 }
 </script>
