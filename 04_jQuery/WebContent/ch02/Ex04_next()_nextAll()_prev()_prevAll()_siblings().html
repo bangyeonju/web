@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div *{
+		border:2px solid purple;
+		display: block;
+		padding:5px;
+		margin:10px;
+	}
+</style>
+<script src ="../js/jquery.js"type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	
+			$('h2').siblings().css({
+				"color":"red",
+				"border":"2px solid red"
+			})
+			//next(),nextAll(),prev(),prevAll(),siblings()
+	
+		});
+</script>
+</head>
+<body>
+	<div>
+		div
+		<p>p</p>
+		<span>span</span>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p</p>
+	</div>
+</body>
+
+</html>

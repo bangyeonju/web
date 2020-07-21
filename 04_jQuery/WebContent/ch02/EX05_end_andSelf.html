@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p,div{
+		margin:5px;
+		padding:5px;
+	}
+	.border{
+		border:3px solid red;
+	}
+	.background{
+		background: yellow;
+	}
+	div{
+		background:green;
+	}
+	p{
+		background:violet;
+	}
+	
+</style>
+<script src = "../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+	/* 	$('div').find('p')
+				.find('span')
+				.addClass('background')
+				.end()//바로전의작업으로 돌아간드아아아아아앗
+				.end()
+				.addClass("border"); */
+		$('div').find('p')
+		.find('span')
+		.addClass('background')
+		.andSelf()
+		.addClass("border");
+	});
+</script>
+
+</head>
+<body>
+	<div>
+	<p>
+		첫째 문장
+			<span>안의 span</span>
+	</p>
+	<p>
+		둘째 문장
+	</p>
+	
+	</div>
+</body>
+</html>

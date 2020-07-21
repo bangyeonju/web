@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.spotlight{
+		background-color:yellow;
+	}
+	.redtext{
+		color:red;
+	}
+	.largetext{
+		font-size:30pt;
+	}
+	.italictext{
+		font-style: italic; 
+		/*글자기울임  */
+	}
+	.under{
+		text-decoration: underline;
+		/* 글자밑줄 */
+	}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function() {
+			//alert(1);
+			$('#myToggle>li').toggle();
+			//toggle():보였다 안보였다.
+			
+		});
+		
+		$('#myToggle li').toggle(first,second,third);
+		//toggle(1,2,3):클릭 할떄마다 차례대로 함수호츌
+		$('#yourToggle li').click(whenClick);
+		
+	});//ready
+	function whenClick(){
+		$(this).toggleClass('italictext');
+	}
+	
+	function first(){
+		$(this).addClass('redtext');
+	}
+	function second(){
+		$(this).removeClass('redtext');
+	}
+	function third(){
+		$(this).addClass('under');
+		
+	}
+</script>
+</head>
+<body>
+	<h1>toggle함수</h1>
+	<ul id="myToggle">
+		<li><h2>EXO</h2></li>
+		<li><h2>방탄소년단</h2></li>
+		<li><h2>동방신기</h2></li>
+	</ul>
+	<hr>
+	
+	<h1>toggleClass함수</h1>
+	<ul id="yourToggle">
+		<li><h2>소녀시대</h2></li>
+		<li><h2>우주소녀</h2></li>
+		<li><h2>레드벨벳</h2></li>
+	</ul>
+	<button>버튼</button>
+</body>
+</html>
