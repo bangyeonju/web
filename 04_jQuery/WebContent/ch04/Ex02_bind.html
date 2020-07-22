@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width:100px;
+		height:80px;
+	}
+</style>
+<script src = "../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$('img').bind('click mouseover mouseout',function(){
+			w= $(event.target).width();
+			h=$(this).height();
+			
+			$(this).width(w+30);
+			$(this).height(h+30);
+			
+			if($(event.target).width() >= 400){
+				$(event.target).unbind('click');//더이상 click 이벤트에 반응안하겠다
+				//$(event.target).unbind();//더이상 이벤트에 반응안하겠다
+			}
+			});
+	});
+</script>
+</head>
+<body>
+	<img src="../images/b.jpg">
+</body>
+</html>

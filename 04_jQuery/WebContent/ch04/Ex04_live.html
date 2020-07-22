@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p{
+	background:yellow;
+	font-weight: bold;
+	padding: 5px;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		cnt =0;
+		$('p').live('dblclick',function(){
+			$(this).after("<p>Another paragraph!"+ cnt++ +"</p>");
+			if(cnt==5){
+				$('p').die();
+			}
+		});
+		
+	});
+	
+	// live():이벤트 처리를 위임할때 사용
+	//이벤트 취소할때 쓰는 이벤트
+	// bind() => unbind()
+	//live()=> die()
+ </script>
+</head>
+<body>
+	<p>Click me</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+		$(function(){
+			//mouseover:마우슬르 올리기만해도
+			//bind 여러가지 이벤트처리를 묶어주는역할
+			$('a').bind('click mouseover',function(){
+				imsi=$(this).attr('href');//가지고오는 방법
+			$('img').attr('src',imsi);//
+			return false;//이벤트전파방지 
+			
+			});
+			});
+</script>
+</head>
+<body>
+	<ul>
+		<li><a href="../images/a.jpg">a이미지</a>
+		<li><a href="../images/b.jpg">b이미지</a>
+	</ul>
+
+	<img src="../images/c.jpg">
+	<div></div>
+</body>
+</html>
