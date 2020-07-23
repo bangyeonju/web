@@ -16,31 +16,34 @@ div {
 		var fruits = ["apple", "banana","orange","melon"];
 		var cars = ["sonata", "morning","genesis"];
 		
-		$(fruits).each(function(index, value){
+		/* $(fruits).each(function(index, value){
 			$('#fruit_list').append("<li>"+index +":"+value + "</li>");
 		});
-		/* 
+		 
 		$(cars).each(function(index){
 			$('#car_list').append("<li>"+index +":"+ cars[index] + "</li>");
 		});
- 		*/
+ 		
 
-	/* 	$.each(cars,function(index){
+	 	$.each(cars,function(index){
 			$('#car_list').append("<li>"+index +":"+ cars[index] + "</li>");
 		});
- 	 */	
+	 	
 		$.each(cars,function(index){
 			//$('#car_list').append("<li>"+index +":"+ cars[index] + "</li>");
 			$("<li>"+index +":"+ cars[index] + "</li>").appendTo('#car_list');
 		});
- 	 
+		*/
+		
 		$(fruits).each(function(index, value){
 			$('#fruit_list2').prepend("<li>"+index +":"+value + "</li>");
 		});
+		/*
 		$.each(cars,function(index){
 			//$('#car_list').append("<li>"+index +":"+ cars[index] + "</li>");
 			$("<li>"+index +":"+ cars[index] + "</li>").prependTo('#car_list2');
 		});
+		*/
 	});
 	/* 	
 	//자식으로 들어온다

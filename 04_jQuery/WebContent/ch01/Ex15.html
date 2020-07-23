@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery.js"  type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		//$('#regBtn').click(function(){
+		$('input[type=submit]').click(function(){
+			//alert(1);
+			str = "선택한 항목은 \n"
+			/* if($('#userId').val()==""){
+				alert('id누락');
+				return false;
+			
+			} */
+
+	 	 if($('#userId').attr('value')==""){
+					alert('id누락2');
+					$('#userId').focus();// 포커스가 userid
+					return false;
+				
+				}
+			str += $('#userId').val()+"\n";
+	 	 /*
+			 if($('#userName').attr('value')==""){
+				alert('이름누락');
+				return false;
+			 }
+			 
+			 if($('#pwd').attr('value')==""){
+				alert('비밀번호 누락');
+				return false;
+			 }
+			 if($('#pwd').attr('value')!=$('#pwdConfirm').attr('value')){
+					alert('암호틀림');
+					return false;
+				 } */
+				if($('#userName').val()==""){
+					alert("이름누락");
+					return false;
+				}
+					str += $('#userName').val()+"\n";
+				if($('#pwd').val()==""){
+					alert('비밀번호 누락');
+					return false;
+				 }
+				str += $('#pwd').val()+"\n";
+				 if($('#pwd').attr('value')!=$('#pwdConfirm').attr('value')){
+						alert('암호일치안함');
+						$('#pwdConfirm').attr('value',"");//value값을""으로
+						$('#pwdConfirm').focus();
+						return false;
+					 }  
+			if($('input[name="hobby"]:checked').length==0){
+				alert('취미하나는 꼭 선택하세요');
+				return false;
+			}
+		
+				
+
+				$('input[name="hobby"]:checked').each(function(){
+						str+=$(this).val()+" ";
+				});
+				str+="\n";
+				
+				
+			if($('#favocoffee option:selected').val()==""){
+				alert("커피선택하세요");
+				return false;
+			}
+			str += $('#favocoffee option:selected').val()+"\n";
+			//방법 1 $('input[name="gender"]').is(":checked")==false
+			//방법 2if($('input[name="gender"]:checked').length==0){
+				//방법3
+				if(!$('input[name="gender"]').is(":checked")){
+				alert("성별선택하세요2");
+				return false;
+			}	
+				$('input[name="gender"]').each(function(){
+					str += $('input[name="gender"]:checked').val()+" ";
+							});
+					str+="\n";
+			
+		
+			
+			
+				
+			
+				
+				alert(str);
+		});
+	});//ready
+</script>
+</head>
+<body>
+	<form name="myform" action="abc.jsp">
+		아이디 : <input type="text" id="userId"/> <br>
+		
+		이름 : <input type="text" id="userName"/> <br>
+		
+		암호 : <input type="password" id="pwd"/> <br>
+		
+		암호확인 : <input type="password" id="pwdConfirm"/> <br>
+	
+		취미<br>
+		음악감상<input type="checkbox" name="hobby" value="music">
+		요가<input type="checkbox" name="hobby" value="yoga">
+		독서<input type="checkbox" name="hobby" value="reading">
+		
+		<br>
+		좋아하는 커피
+		<select name="coffee" id="favocoffee">
+			<option value="">선택</option>
+			<option value="아메리카노">아메리카노</option>
+			<option value="카페라떼">카페라떼</option>
+			<option value="카푸치노">카푸치노</option>
+			<option value="캬라멜마끼아또">캬라멜마끼아또</option>
+		</select>
+		<br>
+		
+		성별<br>
+		남<input type="radio" name="gender" value="남">
+		여<input type="radio" name="gender" value="여">
+		
+		<br><br>
+		
+		<input type="submit" id="regBtn" value="회원가입"/>
+		<input type="reset" id="cnlBtn" value="초기화"/>
+		
+	</form>
+</body>
+</html>
+
+
+
+
+
+

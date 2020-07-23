@@ -4,49 +4,64 @@
 <meta charset="UTF-8">
 <title>Ex06_방연주.html</title>
 <style type="text/css">
-	body{
-		text-align: center;
-	}
-	form{
-		margin-top:40px;
-	}
-	#dan{
-		width:50px;
-	}
+body {
+	text-align: center;
+}
 
+form {
+	margin-top: 40px;
+}
 
+#dan {
+	width: 50px;
+}
 </style>
 <script type="text/javascript" src="./../js/jquery.js"></script>
 <script type="text/javascript">
    /* click change html bind */
    $(function(){
-      $('#view').append('div','<select id="dan"></select>');
-     
-      $('div').append('select','<option value="1">1단');
-    		
-      }
+
+		  var str = "<select id=dan>";
+		  for(var i=1;i<=9;i++){
+			 
+			  str += "<option value=" + i +">" + i + "단</option>";
+		  }
+	   		str += "</select>"
+	      $('.area').append(str);
+			str="";	 
+			
+//	 	  $('#dan').change(function(){
+	 		 $('#view').click(function(){
+	 		  str="";
+	 		  var dan = $('#dan').val();
+	 		  str+=dan+"단<br><br>"
+	 		  //alert(dan);
+	 		  for(var i=1;i<=9;i++){
+	 			  var mul=dan*i;
+	 			  str += dan + "*" +i+"="+mul+"<br>";
+	 		  }
+	 		 $('#result').html(str);
+	 	  });
    });
 </script>
 </head>
 <body>
-   <form>
-      <div class="area">
-        <!--  	<select id="dan">
+	<form>
+		<div class="area">
+			<!--  	<select id="dan">
          		<option value="1">1단
          		<option value="2">2단
          		<option value="3">3단
          		<option value="9">9단
          		
          	</select> -->
-      </div>
-      
-      <br>
-      
-      <input type="button" id="view" value="구구단출력">
-      
-      
-   </form>
-   <br>
-   <div id="result"></div>
+		</div>
+
+		<br> <input type="button" id="view" value="구구단출력">
+
+
+	</form>
+	<br>
+	<div id="result"></div>
 </body>
 </html>
