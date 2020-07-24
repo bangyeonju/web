@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title> Ex02_form_내이름.html </title>
-	<style type="text/css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
 		
 		table {
 			width:500px;
@@ -14,119 +14,47 @@
 			border-collapse: collapse;
 		}
 	</style>
+	
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
-	$(function(){
-		/* 
-		$('input[type=submit]').click(function(){
-			
-		});
-		 */
-		 
-	});
-	
+$(function(){
+});
 	function check(){
-		//alert(1);
-		
-		str="선택한 항목은\n";
-		
-		if($('input[id="id"]').val() == ""){
-			alert("id누락");
-			$('input[id="id"]').focus();
+		/*
+		if($('input[id="id"]').val()==""){
+			alert("아이디 누락");
 			return false;
 		}
-	
-
-		str += $('input[id="id"]').val() +"\n"
-		
-		if($('input[name=password]').val() == ""){
-			alert("pw 누락");
-			$('input[name=password]').focus();
+		if($('input[name=password]').val()==""){
+				alert("비밀번호 누락");
+				return false;
+		}
+		if($('input[name=repassword]').val()==""){
+			alert("비밀번호2 누락");
 			return false;
 		}
-		str += $('input[name=password]').val() +"\n"
-		if($('input[name=repassword]').val() == ""){
-			alert("pw 확인 누락");
-			$('input[name=repassword]').focus();
-			return false;
-		}
-		
-		if($('input[name=password]').val() != $('input[name=repassword]').val()){
-			alert("pw 일치 안함");
+		if($('input[name=password]').val()!=$('input[name=repassword]').val()){
+			alert("pw일치 안합.");
 			$('input[name=repassword]').select();
 			return false;
-		}
-		
-		if($('input[name=name]').val() == ""){
-			alert("name 누락");
-			$('input[name=name]').focus();
-			return false;
-		}
-		str += $('input[name=name]').val() +"\n"
-		if($('select option:selected').val() =="선택"){
-			alert("지역번호를 선택하세요");
-			return false;
-		}
-		str += $('select option:selected').val() +"\n"
-		ph1 = $('input[name="phone1"]').val();
-		if(ph1==""){
-			alert("phone1누락");
-			return false;
-		}
-	
-	
-		if(isNaN(ph1)){
-			alert("phone1은 숫자로 입력하세용");
-			return false;
-		}
-		str += $('input[name="phone1"]').val() +"\n"
-		
-		ph2 = $('input[name="phone2"]').val();
-		if(ph2==""){
-			alert("phone2누락");
-			return false;
-		}
-	
-		if(isNaN(ph2)){
-			alert("phone2은 숫자로 입력하세용");
-			return false;
-		}
-		str += $('input[name="phone2"]').val() +"\n"
-		
-		
-		if($('input[name=email]').val().indexOf('@')==-1){
-			alert("email 형식이 맞지 않습니다.");
-			return false;
-		}
-		str += $('input[name=email]').val()+"\n";
-		
-		if($('input[type=checkbox]:checked').length==0){
-			alert("체크박스하나라도 선택하세요");
-			$('input[value="방탄"]').focus();//스페이스 누르면 포커스 방탄으로!
-			return false;
-		}
-		
-		$('input[type=checkbox]:checked').each(function(){
-			str += $(this).val() + " ";
 			
-		});
-		str+="\n";
-		if(!$('input[name=gender]').is(":checked")){//체크된게없다면
-			alert("성별을 선택해주세요");
+		}
+		*/
+		if($('input[name=name]').val()==""){
+			alert("이름 누락");
 			return false;
 		}
-		str+=$('input[name=gender]:checked').val()+"\n";
-		
-		if($('textarea[name="ta"]').val()==""){
-			alert("textarea 누락");
-			return false
+		if($('select option:selected').val()=="선택"){
+			alert("지역번호를 선택해주셍요");
+			return false;
 		}
-		str+=$('textarea[name="ta"]').val();
+		ph1=$('input[name=phone1]').val();
+		if(isNaN$(ph1)){
+			alert("숫자만 입력하세요1");
+		}
 		
-		alert(str);
-		
-	} // check
-</script>	
+	}
+</script>
 </head>
 <body>
 <form action="result.jsp" name="myform"> 

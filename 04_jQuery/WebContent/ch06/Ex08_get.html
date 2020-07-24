@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td {
+	border: 1px solid grey;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+			$.get('item.xml',function(data){
+				//alert(data);
+				$('#treeData').append(
+						'<tr>'+
+						'<td>id</td>'+
+						'<td>name</td>'+
+						'<td>price</td>'+
+						'<td>description</td>'+
+						'</tr>'
+						);
+					$(data).find('item').each(function(){
+						$('#treeData').append(
+							"<tr>" +
+							"<td>" +$(this).attr("id") +"</td>"+
+							"<td>" +$(this).attr("name") +"</td>"+
+							"<td>" +$(this).children('price').text() +"</td>"+ // 자손의 값을 가져오기 위해서 find or children사용
+							"<td>" +$(this).find('description').text() +"</td>"+
+							"</tr>"
+						);
+					});
+			});//get
+	
+		}); // function
+</script>
+</head>
+<body>
+	<h3>과일의 특성 조사자료</h3>
+	<table id="treeData">
+
+	</table>
+</body>
+</html>

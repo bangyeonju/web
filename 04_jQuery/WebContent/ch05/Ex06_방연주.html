@@ -5,34 +5,50 @@
 <title>Insert title here</title>
 <style type="text/css">
 #left_side{
-		margin: 3px;
-		width: 80px;
-		height: 40px;
-}
-img{
-	margin:10px;
-	width:200px;
-	height:120px;
+		float:left;
+	
 }
 #imgsrc{
-	position: absolute;
-		top:50px;
-		left: 300px;
-		right: 300px;
-		padding-top:25px;
-		background :green;
-		width:400px;
-		height:300px;
+
+	width:300px;
+	height:150px;
+	margin-left: 20px;
+	margin-top: 50px;
+}
+
+img.small{
+	width:90px;
+	height:90px;
+
 }
 
 </style>
 <script src = "../js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(function(){
-		$('.small:eq(0)').bind({
+		
+		imsi=$('.small:eq(0)').attr('src');//.small:eq(0)에서 속성을 가져온다
+		//alert(imsi);
+		$('#area img').attr('src',imsi);
+		
+		$('img.small').mouseover(function(){
+			//lert(1);
+			$(this).fadeTo('slow',0.3);
+			$('#area img').css('display','none');
+			$('#area img').attr('src',$(this).attr('src'))
+						.fadeIn(2000);
+		});
+		$('img.small').mouseout(function(){
+			$(this).fadeTo('fast',1);
+		
+			
+			
+		});
+		/* $('.small:eq(0)').bind({
 			'mouseover': function(){
-			$(this).fadeTo("slow",0.3),
+			$(this).fadeTo("slow",0.3);
 			},
+		
 			mouseout : function(){
 				$(this).fadeTo("slow",1);
 			}
@@ -54,7 +70,7 @@ img{
 			mouseout : function(){
 				$(this).fadeTo("slow",1);
 			}
-		})
+		}) */
 		
 	});
 </script>
@@ -72,7 +88,7 @@ img{
 		</div>
 	</div>
 	<div id="area">
-		<div id="imgsrc"></div>
+		<img id="imgsrc"></img>
 	</div>
 </body>
 </html>

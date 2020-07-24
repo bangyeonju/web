@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function() {
+			//man객체 생성
+			 var man={
+					name:'hong',
+					age:10,
+					birthdate:new Date(2020,1,1),
+					jumsu : {
+							kor:30,
+							eng:40,
+							math:50
+					}
+			};
+			
+			var woman = {
+					name:'kong', 
+					age : 20,
+					birthdate : new Date(1999,11,31),
+					jumsu:{
+						kor:99,
+						eng:55,
+						math:100
+						}
+			}; 
+			console.log(man.name);
+			console.log(man.jumsu.eng);
+			console.log(woman.birthdate);
+			console.log(woman.name);
+			console.log(woman.jumsu.eng);
+
+
+			var a = new Array("aa", "bb");
+			var b = [ "cc", "dd" ];
+			var person = new Array({
+				name : 'hong',
+				age : 10,
+				birthdate : new Date(2020, 1, 1),
+				jumsu : {
+					kor : 30,
+					eng : 40,
+					math : 50
+				}
+			}, 
+			{
+				name : 'kong',
+				age : 20,
+				birthdate : new Date(1999, 11, 31),
+				jumsu : {
+					kor : 99,
+					eng : 55,
+					math : 100
+				}
+			}
+			);//배열끝
+			console.log(person[0].name);
+			console.log(person[1].jumsu.math);
+			
+			
+			var person2 = new Array(man,woman);
+			console.log("------");
+			console.log(person2[0].name);
+			console.log(person2[1].jumsu.math);
+			
+		});
+	</script>
+</body>
+</html>

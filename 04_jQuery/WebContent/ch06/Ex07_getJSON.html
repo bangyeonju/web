@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ex07_getJSON.html</title>
+<style type="text/css">
+img {
+	height: 100px;
+	float: left;
+}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {//data가 가지고온 데이터가 json형태로 들어온다.
+		$.getJSON("http://flickr.com/services/feeds/photos_public.gne?tags=puppy&tagmode=any&format=json&jsoncallback=?",
+						function(data) {
+							$.each(data.items, function(i, item) {
+								alert(i + "," + item);
+								$('<img/>').attr('src', item.media.m).appendTo('#images');//#images에'src'에 item.media.m 추가해라
+								if (i ==4) {
+									return false;
+								}
+							});//each
+						});//getJSON
+
+	});
+</script>
+</head>
+<body>
+	<div id="images"></div>
+</body>
+</html>
