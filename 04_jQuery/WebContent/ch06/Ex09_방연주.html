@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Ex09_내이름.html</title>
+<title>Insert title here</title>
 <style type="text/css">
 	div{
 		width : 300px;
@@ -14,6 +14,30 @@
 		border : 1px solid red;
 	}
 </style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btn').click(function(){
+			$.getJSON('person.json',function(data){
+				var str = "<table border=1><tr><th>번호</th><th>아이디</th><th>가격</th></tr>";
+				
+				$.each(data,function(index){
+					str += "<tr>";
+					str += "<td>" + (index+1) +"</td>" ;
+					str += "<td>" + this.name +"</td>" ;
+					str += "<td>" + this.price +"</td>" ;
+					str += "</tr>";
+				});
+				
+				str += "</table>";
+				$('#display').append(str);
+				
+				
+			});
+		});
+	}); // function
+
+</script>
 </head>
 <body>
 	<h3>JSON 화일 가져오기</h3>
@@ -21,6 +45,8 @@
 	<div id="display"> 요청 결과 출력하는 영역 </div>
 </body>
 </html>
-//json형태의 화일을 만들어서 아이디랑 이름만 아이디:kim 이름:윤아
-노란색 부분에 출력
+
+
+
+
 

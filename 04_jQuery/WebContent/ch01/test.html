@@ -18,107 +18,15 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript">
 $(function(){
+	
 });
-	function check(){
-		str = "선택한 값은 \n";
-		if($('input[id="id"]').val()==""){
-			alert("아이디 누락");
-			return false;
-		}
-		str += $('input[id=id]').val()+"\n";
-		
-		if($('input[name=password]').val()==""){
-				alert("비밀번호 누락");
-				return false;
-		}
-		if($('input[name=repassword]').val()==""){
-			alert("비밀번호2 누락");
-			return false;
-		}
-		if($('input[name=password]').val()!=$('input[name=repassword]').val()){
-			alert("pw일치 안합.");
-			$('input[name=repassword]').select();
-			return false;
-			
-		}
-		str += $('input[name=password]').val()+"\n";
-		
-		if($('input[name=name]').val()==""){
-			alert("이름 누락");
-			return false;
-		}
-		str += $('input[name=name]').val()+"\n";
-		
-		if($('select option:selected').val()=="선택"){
-			alert("지역번호를 선택해주셍요");
-			return false;
-		}
-		str += $('select option:selected').val() +"\n";
-		
-		ph1=$('input[name=phone1]').val();
-		
-		
-		if(isNaN(ph1)){
-			alert("숫자만 입력하세요1");
-			$('input[name=phone1]').select();
-			return false;
-		}
-		ph2=$('input[name=phone2]').val();
-		
-		if(isNaN(ph2)){
-			alert("숫자만 입력하세요2");
-			$('input[name=phone2]').select();
-			return false;
-		}
-		str+= ph1+"\n";
-		str+= ph2+"\n";
-		
-		if($('input[name=address1]').val()==""){
-			alert("주소누락");
-			$('input[name=address1]').focus();
-			return false;
-		}
-		
-		str += $('input[name=address1]').val() +"\n";
-		
-		if($('input[name=address2]').val()==""){
-			alert("세부주소 누락");
-			$('input[name=address2]').focus();
-			return false;
-		}
-		$('input[name=address2]').val()
-		if($('input[name=email]').val()==""){
-			alert("이메일 누락");
-			return false;
-		}
-		
-		if($('input[name=email]').val().indexOf('@')==-1){
-			alert("이메일 형식이 틀렸습니다.");
-			$('input[name=email]').select();
-			return false;
-		}
-		$('input[name=email]').val()
-		
-		
-		if($('input[type=checkbox]:checked').length==0){
-			alert("가수 선택해주세요");
-			return false;
-		}
-		$('input[type=checkbox]:checked').each(function(){
-			str += $(this).val() + " ";
-		});
-		if(!$('input[type=radio]').is(":checked")){
-			alert("성별을 선택해 주세요");
-			return false;
-		}
-		str+=$('input[type=radio]:checked').val();
-		if($('textarea').val()==""){
-			alert("입력해주세요");
-			return false;
-		}
-		str+=$('textarea').val();
-		alert(str);
+
+function check(){
+	if($('input[type=checkbox]:checked').length==0){
+		alert("선택해주세요");
+		return false;
 	}
+}
 </script>
 </head>
 <body>

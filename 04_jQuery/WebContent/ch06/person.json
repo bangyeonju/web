@@ -1,0 +1,32 @@
+[ 			
+  {
+    "id": "1", 
+    "name": "족발",
+    "price": " 30000",
+    "description": "매운족발 "
+  },
+   {
+    "id": "2", 
+    "name": "엽기떡볶이",
+    "price": " 9000",
+    "description": "동대문엽기떡볶이"
+  },
+   {
+    "id": "3", 
+    "name": "쫄면",
+    "price": " 7000",
+    "description": "매운쫄면"
+  },
+   {
+    "id": "4", 
+    "name": "짬뽕",
+    "price": " 7000",
+    "description": "해물짬뽕"
+  },
+   {
+    "id": "5", 
+    "name": "간장게장",
+    "price": " 30000",
+    "description": "먹고싶당"
+  }
+  ]
